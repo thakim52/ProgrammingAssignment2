@@ -1,7 +1,7 @@
 ## A pair of functions that cache the inverse of a matrix.
 ## This function creates a special "matrix" object that can cache its inverse.
 
-## This function creates a special matrix function that can compile its inverse.
+## This function creates a special matrix function that can compile its inverse by initializing the variables first.
 
 makeCacheMatrix <- function(x = matrix()) {
 inverse <- NULL
@@ -14,7 +14,7 @@ get <- function() x
   getInverse <- function() inverse
   list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
 
-## Returns inverse of x.
+## Thsi function returns an inverse of x by extracting previous matrix and inverting it using ! operator with solve().
 
 cacheSolve <- function(x, ...) {
         inverse <- x$getInverse()
